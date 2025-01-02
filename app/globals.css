@@ -1,0 +1,360 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  scrollbar-gutter: stable;
+}
+
+@layer base {
+  :root {
+    --foreground: 20 14.3% 4.1%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 20 14.3% 4.1%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 14.3% 4.1%;
+
+    --primary: 22 100% 50%;
+    --primary-foreground: 60 9.1% 97.8%;
+
+    --secondary: 32 100% 98%;
+    --secondary-foreground: 24 9.8% 10%;
+
+    --muted: 60 4.8% 95.9%;
+    --muted-foreground: 25 5.3% 44.7%;
+
+    --accent: 60 4.8% 95.9%;
+    --accent-foreground: 24 9.8% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 60 9.1% 97.8%;
+
+    --border: 20 5.9% 90%;
+    --input: 0 0% 90%;
+    --ring: 24.6 95% 53.1%;
+    --radius: 1rem;
+  }
+}
+
+img {
+  object-fit: contain;
+}
+
+main {
+  padding: 0 1rem !important;
+}
+* {
+  font-family: var(--font-nunito), sans-serif;
+}
+
+.scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #dbdadd;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #dbd8cf9f #F7F6F5;
+  scroll-behavior: smooth;
+}
+
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #F7F6F5;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  border: 3px solid #F7F6F5;
+}
+
+#auth-modal {
+  border-radius: 6px;
+  width: 100%;
+}
+
+#profile-form {
+  width: 384px;
+}
+
+#stories {
+  overflow: hidden;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+#nprogress .bar {
+  @apply bg-primary !important;
+}
+
+#nprogress .peg {
+  @apply shadow-md shadow-primary !important;
+}
+
+#nprogress .spinner-icon {
+  @apply border-t-primary border-l-primary !important;
+}
+
+#product-form {
+  display: flex;
+  height: 490px;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+@media (max-width: 1340px) {
+  #products-group-list-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1290px) {
+  #products-group-list-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  #filters-container {
+    display: none;
+  }
+}
+
+@media (max-width: 1100px) {
+  #choose-product-modal {
+    justify-content: center;
+    width: 850px;
+    border-radius: 5px;
+  }
+}
+
+@media (max-width: 1024px) {
+  main {
+    padding: 0 5% !important;
+  }
+}
+
+@media (max-width: 1023px) {
+  #sort-popup {
+    display: none;
+  }
+  #search-input {
+    display: none;
+  }
+}
+
+@media (max-width: 790px) {
+  #choose-product-modal {
+    justify-content: center;
+    width: 600px;
+    border-radius: 5px;
+  }
+  #pizza-form-container,
+  #product-form-container {
+    flex-direction: column;
+  }
+  #product-form-container {
+    overflow: hidden;
+  } 
+}
+
+@media (max-width: 769px) {
+  #product-single-form-container {
+    align-items: center;
+  }
+  #choose-product-modal {
+    width: 500px;
+    height: 570px;
+    overflow-y: scroll;
+    border-radius: 5px;
+  }
+  #ingredient-item-container {
+    width: 100%;
+    justify-items: center;
+  }
+  #ingredients-item-container {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  #pizza-form {
+    width: 100% !important;
+  }
+  #modal-pizza-image {
+    padding: 1rem 0;
+  }
+  #modal-pizza-image-border-one,
+  #modal-pizza-image-border-two {
+    display: none;
+  }
+}
+
+@media (max-width: 684px) {
+  #choose-product-modal {
+    width: 420px;
+    height: 570px;
+    overflow-y: scroll;
+    border-radius: 5px;
+  }
+  #pizza-form-container img {
+    width: 250px;
+    height: 250px;
+  }
+  #ingredient-item-container {
+    width: 100px;
+    height: 160px;
+    justify-items: center;
+  }
+  #ingredients-item-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  #pizza-form {
+    width: 100% !important;
+  }
+  #pizza-form h3 {
+    margin-bottom: 0.5rem;
+  }
+  #pizza-form p {
+    margin-bottom: 1rem;
+  }
+  #modal-pizza-image {
+    padding: 1rem 0;
+  }
+  #modal-pizza-image-border-one,
+  #modal-pizza-image-border-two {
+    display: none;
+  }
+  #products-group-list-container {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  #top-bar {
+    display: none;
+  }
+}
+
+@media (max-width: 565px) {
+  #profile-form {
+    width: 100%;
+  }
+  #auth-modal {
+    width: 95%;
+  }
+  #choose-product-modal  {
+    align-items: center;
+  }
+  #product-form {
+    display: flex;
+    height: auto;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  #checkout-button-two h2,
+  #checkout-button-one h2{
+    font-size: 1.1rem !important;
+  }
+  #cart-item-price {
+    font-size: 1rem !important;
+  }
+  #cart-drawer-item {
+    gap: 0.75rem;
+    padding: 0.75rem 0.5rem;
+  }
+  #choose-product-modal {
+    width: 350px;
+    height: 300px;
+    overflow-y: scroll;
+    border-radius: 5px;
+  }
+  #pizza-form-container img,
+  #product-form-container img {
+    width: 180px;
+    height: 180px;
+  }
+  #ingredient-item-container {
+    width: 100px;
+    height: 160px;
+    justify-items: center !important;
+  }
+  #ingredients-item-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-items: center !important;
+    font-size: 1rem
+  }
+  #pizza-form,
+  #product-form {
+    border-radius: 5px;
+    display: grid;
+    justify-items: center;
+    width: 100% !important;
+  }
+  #pizza-form button {
+    width: 90% !important;
+  }
+  #modal-pizza-image,
+  #modal-product-image {
+    padding: 1rem 0;
+  }
+  #modal-pizza-image-border-one,
+  #modal-pizza-image-border-two {
+    display: none;
+  }
+  #header-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 1rem;
+  }
+  #logo-font {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+  #logo-font-sub {
+    font-size: 0.75rem;
+  }
+  h2 {
+    font-size: 1.5rem !important;
+  }
+  p {
+    font-size: 0.75rem !important;
+    line-height: normal !important;
+  }
+}
+
+@media (max-width: 380px) {
+  #cart-item-info h2 {
+    font-size: 1.1rem !important;
+  }
+  #cart-item-price {
+    font-size: 1rem !important;
+  }
+  #empty-cart {
+    padding: 0 8px;
+  }
+  #auth-modal {
+    width: 95%;
+  }
+}
